@@ -2,6 +2,14 @@
 int n = 10;
 int[] arr = new int[n];
 
+int[] b = {-10, 8, 2, 8, 4, 5, 8, 7, 8 };
+
+for(int i =0; i < b.Length; i++)
+{
+    Console.WriteLine($"b[{i}] = {b[i]}");
+}
+
+
 arr[1] = 67;
 
 
