@@ -26,8 +26,21 @@ int max = int.MinValue;
 //max = arr[0];
 //Console.WriteLine(int.MinValue);
 
+
+bool exPos = false;
+bool allPos = true;
+
+
+
 for (int i = 0; i < n; i++)
 {
+    if (arr[i] > 0)
+        exPos = true;
+    
+    if (arr[i] < 0)
+        allPos = false;
+
+
     if (arr[i] > max)
         max = arr[i];
 
