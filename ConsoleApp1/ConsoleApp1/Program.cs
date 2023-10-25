@@ -1,4 +1,4 @@
-﻿int Max(ref int a, ref int b)
+﻿int Max(int a, int b)
 {
     a = 200;
     if (a < b)
@@ -8,6 +8,17 @@
 }
 
 
+int[] GenMas(int size)
+{
+    Random r = new Random();
+    int[] mas = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        mas[i] = r.Next(100);
+    }
+    return mas;
+}
 
 
 void PrintMas(int[] arr)
@@ -18,19 +29,32 @@ void PrintMas(int[] arr)
     }
 }
 
+int MaxMas(int[] arr)
+{
+    int max = arr[0];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > max)    
+            max = arr[i];
+    }
+    return max;
+}
+
 
 int k = 100, l = 105;
 
-var x = Max(ref k, ref l);
+//var x = Max(ref k, ref l);
+var x = Max(k, l);
+
 Console.WriteLine($"k = {k}   l = {l}    max = {x}");
 
 
-
+var arr = GenMas(20);
 //Max(55, 56);
-PrintMas(new int[]{1,2,3,4,5,6 });
+PrintMas(arr);
 
 
 
-//Console.WriteLine(Max(4, 7));
+Console.WriteLine(Max(4, 7));
 
 
