@@ -29,8 +29,14 @@ void BubbleSort(int[] arr)
         if (finish)
             break;
     }
+}
 
-
+bool CheckSort(int[] arr)
+{
+    for(int i = 0; i < arr.Length - 1; i++)
+        if (arr[i] > arr[i+1])
+            return false;
+    return true;
 }
 
 
@@ -55,7 +61,8 @@ void PrintArr(int[] arr)
 }
 
 
-var a = GenerateArr(10);
+var a = GenerateArr(100);
 PrintArr(a);
 BubbleSort(a);
 PrintArr(a);
+Console.WriteLine(CheckSort(a));    
