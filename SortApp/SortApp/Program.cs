@@ -1,4 +1,45 @@
-﻿
+﻿void MergeSortRec(int[] arr, int k, int l)
+{
+    if (k >= l)
+        return;
+
+    int m = (k + l) / 2;
+    MergeSortRec(arr, k, m);
+    MergeSortRec(arr, m + 1, l);
+
+    var temp = new int[l-k+1];
+
+    int i1 = k, i2 = m + 1, i = 0;
+    while(i1 <= m && i2 <= l)
+    { 
+        if(arr[i1] < arr[i2])
+            temp[i++] = arr[i1++];
+        else
+            temp[i++] = arr[i2++];
+    }
+    if (i1 > m)
+        for (i1 = i2; i1 <= l; i1++)
+            temp[i++] = arr[i1];
+    else
+        for (i2 = i1; i2 <= m; i2++)
+            temp[i++] = arr[i2];
+
+    for(i=0; i < temp.Length; i++)
+    { 
+        arr[k+i] = temp[i];
+    }
+
+
+    //   Console.WriteLine($"{k} {m} {l}");
+}
+
+
+void MergeSort(int[] arr)
+{
+    MergeSortRec(arr, 0, arr.Length - 1);
+}
+
+
 
 void BubbleSort(int[] arr)
 {
@@ -63,6 +104,7 @@ void PrintArr(int[] arr)
 
 var a = GenerateArr(100);
 PrintArr(a);
-BubbleSort(a);
+MergeSort(a);
+//BubbleSort(a);
 PrintArr(a);
-Console.WriteLine(CheckSort(a));    
+Console.WriteLine(CheckSort(a));
