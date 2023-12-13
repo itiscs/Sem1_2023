@@ -24,11 +24,8 @@ namespace TestFraqApp
         [Test]
         public void TestConstructorZeroDiv()
         {
-
-            Fraq f = new Fraq(1, 0);
-
-            Assert.AreEqual(1, f.Chis);
-            Assert.AreEqual(0, f.Znam);
+                        
+            Assert.Throws<ArgumentException>(()=>new Fraq(1,0));
         }
 
         [Test]
