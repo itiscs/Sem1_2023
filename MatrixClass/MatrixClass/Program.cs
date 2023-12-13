@@ -1,9 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MatrixClass;
 
-Console.WriteLine("Hello, World!");
-
-
 Matrix m = new Matrix(5);
 
 m.FillRandom();

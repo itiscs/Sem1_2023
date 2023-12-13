@@ -128,6 +128,7 @@ namespace FraqApp
 
         public static bool operator>(Fraq f1, Fraq f2)
         {
+
             return f1.Chis*f2.Znam > f2.Chis*f1.Znam;
         }
 
